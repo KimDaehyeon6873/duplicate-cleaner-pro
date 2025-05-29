@@ -778,7 +778,7 @@ class DuplicateCleaner(tk.Tk):
         btn_frame = ttk.Frame(win)
         btn_frame.pack(side='bottom', fill='x', padx=10, pady=(0,10), anchor='e')
 
-        def apply_settings():
+        def _internal_apply_settings(): # 설정 적용 로직 (이전과 동일)
             self.skip_dirs.set(self.txt_skip_dirs.get('1.0','end-1c').strip())
             
             # 로깅 설정 적용
@@ -811,11 +811,15 @@ class DuplicateCleaner(tk.Tk):
                 USE_BLAKE3 = False
             self._save_settings_to_file() # 설정 변경 시 파일에 저장
 
+        def apply_action_with_confirmation():
+            _internal_apply_settings()
+            messagebox.showinfo("설정 저장됨", "설정이 성공적으로 적용 및 저장되었습니다.", parent=win)
+            # 창은 닫지 않음
 
-        ttk.Button(btn_frame, text="확인", command=lambda: (apply_settings(), win.destroy())).pack(side='right', padx=2)
-        ttk.Button(btn_frame, text="적용", command=apply_settings).pack(side='right', padx=2)
+        # "확인" 버튼 제거
+        # "적용" 버튼: 설정 적용, 팝업 알림, 창 유지
+        ttk.Button(btn_frame, text="적용", command=apply_action_with_confirmation).pack(side='right', padx=2)
         ttk.Button(btn_frame, text="모든 설정 초기화", command=lambda: self.reset_all_settings_to_default(win)).pack(side='left', padx=(0,10))
-        # "취소" 버튼 제거
 
         win.transient(self) # 부모 창 위에 표시
 
