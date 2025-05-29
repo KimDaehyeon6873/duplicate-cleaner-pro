@@ -31,7 +31,7 @@ MANIFEST
 # PyInstaller
 #  Usually these files are created by PyInstaller
 #  Main executable spec file
-*.spec
+# *.spec  # .spec 파일은 빌드 정의를 포함하므로 버전 관리하는 것이 좋습니다.
 #  EXE file
 # *.exe # 만약 .exe 파일을 공유하고 싶지 않다면 주석 해제
 
@@ -102,6 +102,7 @@ celerybeat.pid
 env/
 venv/
 ENV/
+venv_makingexe/  # 특정 가상 환경 폴더 무시
 env.bak/
 venv.bak/
 
