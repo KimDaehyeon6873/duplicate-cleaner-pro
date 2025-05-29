@@ -120,3 +120,4 @@ venv.bak/
 .DuplicateCleanerPro/app.log
 # 만약 .DuplicateCleanerPro 폴더 전체를 무시하고 싶다면:
 # .DuplicateCleanerPro/
+nuitka-crash-report.xml
