@@ -2,7 +2,7 @@
 
 ## 🚀 고성능 중복 파일 제거 프로그램 (Tkinter GUI)
 
---- C:\Users\Admin\Desktop\algorithm\기말 프로젝트\duplicate_cleaner_pro
+---
 
 ### **개요**
 
