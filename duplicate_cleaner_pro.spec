@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['duplicate_cleaner_pro_v3.py'],
+    ['duplicate_cleaner_pro.py'],
     pathex=[],
     binaries=[],
     datas=[],
@@ -21,11 +21,11 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='duplicate_cleaner_pro_v3',
+    name='duplicate_cleaner_pro',
     debug=False,
     bootloader_ignore_signals=False,
-    strip=True,
-    upx=False,
+    strip=False,
+    upx=True,
     console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
@@ -38,8 +38,8 @@ coll = COLLECT(
     exe,
     a.binaries,
     a.datas,
-    strip=True,
-    upx=False,
+    strip=False,
+    upx=True,
     upx_exclude=[],
-    name='duplicate_cleaner_pro_v3',
+    name='duplicate_cleaner_pro',
 )
